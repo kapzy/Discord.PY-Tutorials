@@ -66,10 +66,6 @@ async def on_message(message):
     if message.author.id == bot.user.id:
         return
 
-@client.command()
-@commands.has_permissions(manage_messages = True)
-async def purge(ctx, amount=15):
-	await ctx.channel.purge(limit=amount)
 
 
 @client.command()
