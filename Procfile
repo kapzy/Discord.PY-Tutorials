@@ -1,1 +1,1 @@
-worker: python vyra.py
+worker: python bot.py
