@@ -20,7 +20,7 @@ def get_prefix(bot, message):
     return commands.when_mentioned_or(data[str(message.guild.id)])(bot, message)
 
 #Defining a few things
-secret_file = json.load(open(cwd+'/bot_config/secrets.json'))
+
 bot = commands.Bot(command_prefix=get_prefix, case_insensitive=True, owner_id=271612318947868673)
 logging.basicConfig(level=logging.INFO)
 
@@ -56,7 +56,7 @@ bot.color_list = [c for c in bot.colors.values()]
 async def on_ready():
     # On ready, print some details to standard out
     print(f"-----\nLogged in as: {bot.user.name} : {bot.user.id}\n-----\nMy current prefix is: -\n-----")
-    await bot.change_presence(activity=discord.Game(name=f"Hi, my names {bot.user.name}.\nUse - to interact with me!")) # This changes the bots 'activity'
+    await bot.change_presence(activity=discord.Game(name=f"Hi, my names {bot.user.name}.\nUse -prefix")) # This changes the bots 'activity'
 
 @bot.event
 async def on_message(message):
