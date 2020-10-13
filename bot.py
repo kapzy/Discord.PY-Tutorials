@@ -20,7 +20,7 @@ def get_prefix(bot, message):
     return commands.when_mentioned_or(data[str(message.guild.id)])(bot, message)
 
 #Defining a few things
-secret_file = json.load(open(cwd+'/bot_config/secrets.json'))
+
 bot = commands.Bot(command_prefix=get_prefix, case_insensitive=True, owner_id=271612318947868673)
 logging.basicConfig(level=logging.INFO)
 
